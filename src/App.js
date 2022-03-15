@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+
+
 import React, { useState } from "react";
 
 import ToggleSwitch from './components/ToggleSwitch';
@@ -17,24 +17,29 @@ height:100vh;
 
 
 const ToggleSwitchWrapper = styled.div`
-display: flex;
-justify-content: right;
+  margin-left: calc(100% - 80px);
+  margin-top:10px;
+
+  position: fixed;
+  margin-right: 0px;
+`;
 
 
-
-`
 const ImageAndParaContainer = styled.div`
-display: flex;
-width:100vw;
-height: 1000vh;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
 
-
-
-`
+    
+  }
+`;
 
 const ImageContainer = styled.div`
 flex:1;
-background-color: ${props=>props.bright?"blue":"red"};
+background-color: ${props=>props.bright?"red":"blue"};
 `
 
 const ParaContainer = styled.div`
