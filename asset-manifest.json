@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/heliosPortfolio/static/css/main.c846a12a.css",
-    "main.js": "/heliosPortfolio/static/js/main.388b199e.js",
+    "main.js": "/heliosPortfolio/static/js/main.6dd29a37.js",
     "static/js/787.8856072d.chunk.js": "/heliosPortfolio/static/js/787.8856072d.chunk.js",
     "index.html": "/heliosPortfolio/index.html",
     "main.c846a12a.css.map": "/heliosPortfolio/static/css/main.c846a12a.css.map",
-    "main.388b199e.js.map": "/heliosPortfolio/static/js/main.388b199e.js.map",
+    "main.6dd29a37.js.map": "/heliosPortfolio/static/js/main.6dd29a37.js.map",
     "787.8856072d.chunk.js.map": "/heliosPortfolio/static/js/787.8856072d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c846a12a.css",
-    "static/js/main.388b199e.js"
+    "static/js/main.6dd29a37.js"
   ]
 }
