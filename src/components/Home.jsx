@@ -38,17 +38,20 @@ const Image = styled.img`
 const ImageContainer = styled.div`
   flex: 1;
   padding: 10px;
+  color: ${(props) => (props.bright ? "black" : "white")};
 
-  background-color: ${(props) => (props.bright ? "red" : "blue")};
-  /* background-color: ${(props) => (props.bright ? "white" : "black")}; */
+
+  background-color: ${(props) => (props.bright ? "white" : "black")};
 `;
 
 const ParaContainer = styled.div`
   flex: 1;
+  
+  color: ${(props) => (props.bright ? "black" : "white")};
 
-  background-color: ${(props) => (props.bright ? "blue" : "red")};
+ 
 
-  /* background-color: ${(props) => (props.bright ? "white" : "black")}; */
+  background-color: ${(props) => (props.bright ? "white" : "black")};
 `;
 
 function Home({bright,changeState}) {
