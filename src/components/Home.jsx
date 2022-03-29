@@ -40,11 +40,17 @@ const ImageContainer = styled.div`
   padding: 10px;
   color: ${(props) => (props.bright ? "black" : "white")};
 
+  /* thsidf;asldkfjlasdfas */
+
 
   background-color: ${(props) => (props.bright ? "white" : "black")};
 `;
 
 const ParaContainer = styled.div`
+
+
+
+
   flex: 1;
   
   color: ${(props) => (props.bright ? "black" : "white")};
