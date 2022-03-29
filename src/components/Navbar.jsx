@@ -11,7 +11,7 @@ const Container = styled.div`
 
   width: 100vw;
   height: 50px;
-  background-color: gray;
+  background-color: transparent;
 `;
 
 const LeftContainer = styled.div`

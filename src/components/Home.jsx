@@ -86,4 +86,3 @@ function Home({bright,changeState}) {
 }
 
 export default Home;
-
