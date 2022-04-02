@@ -8,6 +8,13 @@ import {AiOutlineClose} from "react-icons/ai"
 
 import { useState } from "react";
 
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+`
+
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -17,9 +24,19 @@ const Container = styled.div`
   background-color: transparent;
 `;
 
+const BurgerItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  background-color: "red";
+  @media only screen and (min-width: 1080px) {
+    display: none;
+  }
+`;
+
 const LeftContainer = styled.div`
   flex: 2;
-  margin-left: 20px;
+  padding-left: 20px;
   display: flex;
 
   align-items: center;
@@ -29,8 +46,8 @@ const RightContainer = styled.div`
   align-items: center;
   flex: 3;
   justify-content: space-between;
-  margin-right: 20px;
-  @media only screen and (max-width: 600px) {
+  padding-right: 20px;
+  @media only screen and (max-width: 1080px) {
     display: none;
   }
 `;
@@ -39,61 +56,83 @@ const BurgerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right:40px;
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 1080px) {
     display:none ;
   }
 `;
 
 const Navbar = ({ bright }) => {
   
-  const [burger, setBurger] = useState(true);
+  const [burger, setBurger] = useState(false);
   return (
-    <Container>
-      <LeftContainer>
-        <Link to="/">
-          <h3>Helios</h3>
-        </Link>
-      </LeftContainer>
-      <RightContainer>
-        <Link to="/">
-          <h3>Home</h3>
-        </Link>
-
-        {bright && (
-          <Link to="/features">
-            <h3>Features</h3>
+    <MainContainer>
+      <Container>
+        <LeftContainer>
+          <Link to="/">
+            <h3>Helios</h3>
           </Link>
-        )}
+        </LeftContainer>
+        <RightContainer>
+          <Link to="/">
+            <h3>Home</h3>
+          </Link>
 
-        <Link to="/team">
-          <h3>Team Info</h3>
-        </Link>
-        <Link to="/contact">
-          <h3>Contact Info</h3>
-        </Link>
-      </RightContainer>
+          {bright && (
+            <Link to="/features">
+              <h3>Features</h3>
+            </Link>
+          )}
 
-      <BurgerContainer>
-        {burger ? (
-          <GiHamburgerMenu
-            size="20px"
-            onClick={() => {
-              setBurger(false);
-            }}
-          ></GiHamburgerMenu>
-        ) : (
-          <AiOutlineClose
-            size="20px"
-            onClick={() => {
-              setBurger(true);
-            }}
-          
-            >
-          </AiOutlineClose>
-        )}
-      </BurgerContainer>
-    </Container>
+          <Link to="/team">
+            <h3>Team Info</h3>
+          </Link>
+          <Link to="/contact">
+            <h3>Contact Info</h3>
+          </Link>
+        </RightContainer>
+
+        <BurgerContainer>
+          {burger ? (
+            <AiOutlineClose
+              size="20px"
+              onClick={() => {
+                setBurger(false);
+              }}
+            ></AiOutlineClose>
+          ) : (
+            <GiHamburgerMenu
+              size="20px"
+              onClick={() => {
+                setBurger(true);
+              }}
+            ></GiHamburgerMenu>
+          )}
+        </BurgerContainer>
+      </Container>
+
+      {burger && (
+        <BurgerItems>
+          <Link to="/">
+            <h3>Home</h3>
+          </Link>
+
+          {bright && (
+            <Link to="/features">
+              <h3>Features</h3>
+            </Link>
+          )}
+
+          <Link to="/team">
+            <h3>Team Info</h3>
+          </Link>
+          <Link to="/contact">
+            <h3>Contact Info</h3>
+          </Link>
+        </BurgerItems>
+      )}
+    </MainContainer>
   );
 };
 
