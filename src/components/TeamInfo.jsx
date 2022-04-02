@@ -12,6 +12,7 @@ const SocialMediaContainer = styled.div`
   display: flex;
   justify-content: space-around;
   color: black;
+  bottom:0px;
 `;
 
 const ImgContainer = styled.div`
@@ -46,6 +47,7 @@ const DescriptionContainer = styled.div`
   margin-left: 15px;
   margin-right: 15px;
   text-align: justify;
+  height:90px;
 `;
 
 const Card = styled.div`
@@ -59,6 +61,8 @@ const Card = styled.div`
 
   &:hover {
     background-color: #2e2b2b;
+    transform: scale(1.05);
+    transition: width 2s;
     ${CardImage} {
       background-color: ${(props) => props.color};
     }
@@ -78,6 +82,13 @@ const Card = styled.div`
     ${SocialMediaContainer} {
       color: ${(props) => props.color};
     }
+
+				${BsLinkedin}{
+					color:"red"
+
+				}
+
+
   }
 `;
 
@@ -108,13 +119,13 @@ const TeamInfo = () => {
 
               <SocialMediaContainer>
                 <a href={item.linkedin}>
-                  <BsLinkedin size="30px" />
+                  <BsLinkedin size="30px" color="blue" />
                 </a>
-                <a href={item.linkedin}>
-                  <BsInstagram size="30px" />
+                <a href={item.insta}>
+                  <BsInstagram size="30px" color="#9b3f75" />
                 </a>
-                <a href={item.linkedin}>
-                  <IoMail size="30px" />
+                <a href={item.mail}>
+                  <IoMail size="30px" color="#BB001B" />
                 </a>
               </SocialMediaContainer>
             </Card>
@@ -138,13 +149,13 @@ const TeamInfo = () => {
 
               <SocialMediaContainer>
                 <a href={item.linkedin}>
-                  <BsLinkedin size="30px" />
+                  <BsLinkedin size="30px" color="blue" />
                 </a>
-                <a href={item.linkedin}>
-                  <BsInstagram size="30px" />
+                <a href={item.insta}>
+                  <BsInstagram size="30px" color="#9b3f75" />
                 </a>
-                <a href={item.linkedin}>
-                  <IoMail size="30px" />
+                <a href={item.mail}>
+                  <IoMail size="30px" color="#BB001B" />
                 </a>
               </SocialMediaContainer>
             </Card>
@@ -168,13 +179,13 @@ const TeamInfo = () => {
 
               <SocialMediaContainer>
                 <a href={item.linkedin}>
-                  <BsLinkedin size="30px" />
+                  <BsLinkedin size="30px" color="blue" />
                 </a>
-                <a href={item.linkedin}>
-                  <BsInstagram size="30px" />
+                <a href={item.insta}>
+                  <BsInstagram size="30px" color="#9b3f75" />
                 </a>
-                <a href={item.linkedin}>
-                  <IoMail size="30px" />
+                <a href={item.mail}>
+                  <IoMail size="30px" color="#BB001B" />
                 </a>
               </SocialMediaContainer>
             </Card>

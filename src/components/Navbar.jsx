@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { GiHamburgerMenu } from "react-icons/gi"
+import {AiOutlineClose} from "react-icons/ai"
 // left side of the navbar contains the heading of the project everytime
 // on rightContainer if the screen is less than some 720px, the we wiill replace that with the burger menu
+
+import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -22,19 +25,29 @@ const LeftContainer = styled.div`
   align-items: center;
 `;
 const RightContainer = styled.div`
-
   display: flex;
   align-items: center;
   flex: 3;
   justify-content: space-between;
   margin-right: 20px;
-		@media only screen and (max-width: 720px) {
-			/* code for burger menu */
-
-		}
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
-const Navbar = ({bright}) => {
+const BurgerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (min-width: 600px) {
+    display:none ;
+  }
+`;
+
+const Navbar = ({ bright }) => {
+  
+  const [burger, setBurger] = useState(true);
   return (
     <Container>
       <LeftContainer>
@@ -60,6 +73,26 @@ const Navbar = ({bright}) => {
           <h3>Contact Info</h3>
         </Link>
       </RightContainer>
+
+      <BurgerContainer>
+        {burger ? (
+          <GiHamburgerMenu
+            size="20px"
+            onClick={() => {
+              setBurger(false);
+            }}
+          ></GiHamburgerMenu>
+        ) : (
+          <AiOutlineClose
+            size="20px"
+            onClick={() => {
+              setBurger(true);
+            }}
+          
+            >
+          </AiOutlineClose>
+        )}
+      </BurgerContainer>
     </Container>
   );
 };
